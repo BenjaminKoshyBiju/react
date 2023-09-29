@@ -11,16 +11,19 @@ function App() {
     if (mode==='light')
     {
       setMode('dark')
+      document.body.style.backgroundColor='#383d43'
+      
     }
     else{
       setMode('light')
+      document.body.style.backgroundColor='white'
     }
   }
   return (
     <>
   <Navbar title="Testing" mode={mode} darkMode={darkMode}/>
   <div className="container">  
-  <TestForm heading="Text Converter"/>
+  <TestForm heading="Text Converter" mode={mode}/>
   {/* <About/> */}
   </div>
 
