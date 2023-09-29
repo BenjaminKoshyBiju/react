@@ -1,29 +1,35 @@
 import React, {useState} from 'react'
 
 export default function TestForm(props) {
+  const [text,setText]=useState('')
+        const handleOnClick=()=>{
+            let newText=text.toUpperCase();
+            setText(newText);
+            props.showAlert('Converted to Upper case', 'success')
 
-    const handleOnClick=()=>{
-        let newText=text.toUpperCase();
-        setText(newText);
+        }
 
-    }
+        const handleOnchange=(event)=>{
+            setText(event.target.value)
+        }
 
-    const handleOnchange=(event)=>{
-        setText(event.target.value)
-    }
+        const clearText=()=>{
+          setText('')
+          props.showAlert('Texted Cleared', 'success')
+          
+        }
 
-    const clearText=()=>{
-      
-      setText('')
-    }
+        const onLower=()=>{
+          let newText=text.toLowerCase()
+            setText(newText)
 
-    const onLower=()=>{
-      let newText=text.toLowerCase()
-        setText(newText)
-      
-    }
+            props.showAlert('Conerted to Lower case', 'success')
+          
+        }
 
-    const [text,setText]=useState('')
+     
+
+    
 
   
     
